@@ -6,7 +6,7 @@
 			<img src="assets/dist/img/user2-160x160.jpg" class="img-circle elevation-2" alt="User Image">
 		</div>
 		<div class="info">
-			<a href="" class="d-block">Alexander Pierce</a>
+			<h5 class="mb-n1 d-block text-light"><?= $this->session->userdata('name') ?></h5>
 		</div>
 	</div>
 
@@ -25,7 +25,7 @@
 			<div class="row">
 				<div class="col-6">
 					<div class="pt-2 mt-n1 card text-center shadow">
-						<h6>Jml-Item</h6>
+						<h6>Jenis-Item</h6>
 						<h3 class="mt-n2">15</h3>
 					</div>
 				</div>
