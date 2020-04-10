@@ -1,20 +1,17 @@
 <!-- Sidebar  -->
-<?php $this->load->view('layouts/_sidebar_kasir'); ?>
+<?php $this->load->view('layouts/sidebar_kasir'); ?>
 <!-- akhir sidebar -->
 
-<!-- ########## kasir ########## -->
 <div class="content-wrapper">
-	<!-- Main content -->
+	<!-- ########## kasir ########## -->
 	<section class="content">
 		<div class="container-fluid">
 			<div class="row">
+				<!-- ########## nota ########## -->
 				<div class="pt-2 col-md-9">
-					<?php $this->load->view('layouts/_alert') ?>
-					<!-- ########## nota ########## -->
+					<?php $this->load->view('layouts/alert') ?>
 					<div class="card">
-						<!-- /.card-header -->
 						<div class="card-body p-0">
-
 							<table class="table table-striped">
 								<thead>
 									<tr>
@@ -91,18 +88,18 @@
 						</div>
 						<!-- /.card-body -->
 					</div>
-					<!-- ### nota ### -->
 				</div>
+				<!-- ### akhir nota ### -->
+
+				<!-- ########## sidebar kanan ########## -->
 				<div class="pt-2 col-md-3">
-					<!-- ########## gambar ########## -->
 					<div class="card">
-						<img src="images/search-icon.jpg" hieght="250" width="250px" alt="">
+						<img src="<?= base_url(); ?>images/search-icon.jpg" hieght="250" width="250px" alt="" class="rounded">
 					</div>
-					<!-- ### akhir gambar ### -->
 				</div>
+				<!-- ### akhir sidebar kanan ### -->
 			</div>
 		</div>
 	</section>
-	<!-- /.content -->
+	<!-- ### akhir kasir ### -->
 </div>
-<!-- ### akhir kasir ### -->

@@ -2,13 +2,10 @@
 <nav class="main-header navbar navbar-expand navbar-secondary navbar-dark fixed">
 	<!-- link navbar kiri -->
 	<ul class="navbar-nav">
-		<?php if ('class="col-sm"') : ?>
+		<li class="nav-item">
+			<a class="nav-link" data-widget="pushmenu" href=""><i class="fas fa-bars"></i></a>
+		</li>
 
-		<?php else : ?>
-			<li class="nav-item">
-				<a class="nav-link" data-widget="pushmenu" href=""><i class="fas fa-bars"></i></a>
-			</li>
-		<?php endif ?>
 		<!-- ########## menu kasir ########## -->
 		<li class="nav-item dropdown no-arrow">
 			<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -16,11 +13,11 @@
 			</a>
 			<!-- Dropdown info -->
 			<div class="dropdown-menu dropdown-menu-left shadow animated--grow-in" aria-labelledby="userDropdown">
-				<a href="<?= base_url('profile'); ?>" class="dropdown-item"><i class="fas fa-fw fa-cash-register mr-2"></i>KASIR</a>
+				<a href="<?= base_url('kasir'); ?>" class="dropdown-item"><i class="fas fa-fw fa-cash-register mr-2"></i>KASIR</a>
 				<div class="dropdown-divider"></div>
 				<a href="<?= base_url(''); ?>" class="dropdown-item"><i class="fas fa-fw fa-money-bill-wave mr-2"></i></i>Pembelian</a>
 				<div class="dropdown-divider"></div>
-				<a href="<?= base_url(''); ?>" class="dropdown-item"><i class="fas fa-fw fa-undo-alt mr-2"></i></i>Retur</a>
+				<a href="<?= base_url(''); ?>" class="dropdown-item"><i class="fas fa-fw fa-undo-alt mr-2"></i></i>Reture</a>
 				<div class="dropdown-divider"></div>
 				<a href="<?= base_url(''); ?>" class="dropdown-item"><i class="far fa-fw fa-trash-alt mr-2"></i></i>Rusak</a>
 			</div>
@@ -61,20 +58,13 @@
 		<!-- ########## login/logout ########## -->
 		<li class="nav-item dropdown no-arrow">
 			<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				<?= $this->session->userdata('name') ?>
-				<i class="fas fa-fw fa-lock"></i>
+				<?= $this->session->userdata('nama') ?>
+				<i class="fas fa-ellipsis-v"></i>
 			</a>
 			<!-- Dropdown info -->
 			<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-				<!-- <a href="<?= base_url('profile'); ?>" class="dropdown-item"><i class="fas fa-user fa-sm fa-fw mr-2"></i>Profile</a>
-                <div class="dropdown-divider"></div> -->
-				<?php if (!$this->session->userdata('is_login')) : ?>
-					<a href="<?= base_url('register'); ?>" class="dropdown-item"><i class="far fa-fw fa-registered mr-2"></i>Register</a>
-					<div class="dropdown-divider"></div>
-					<a href="<?= base_url('login'); ?>" class="dropdown-item"><i class="fas fa-fw fa-sign-in-alt mr-2"></i>LOGIN</a>
-					<div class="dropdown-divider"></div>
-				<?php endif ?>
-				<!-- logout diarahkan ke login/logout -->
+				<a href="<?= base_url('menu/data_pegawai'); ?>" class="dropdown-item"><i class="fas fa-user fa-sm fa-fw mr-2"></i>MENU</a>
+				<div class="dropdown-divider"></div>
 				<a href="<?= base_url('logout'); ?>" class="dropdown-item" type="submit" onclick="return confirm('Yakin logout? Apa tidak ada yang tertinggal?')"><i class="fas fa-fw fa-sign-out-alt mr-2"></i>LOGOUT</a>
 			</div>
 		</li>
