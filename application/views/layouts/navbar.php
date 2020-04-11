@@ -59,13 +59,13 @@
 		<li class="nav-item dropdown no-arrow">
 			<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 				<?= $this->session->userdata('nama') ?>
-				<i class="fas fa-ellipsis-v"></i>
+				<i class="ml-3 fas fa-ellipsis-v"></i>
 			</a>
 			<!-- Dropdown info -->
 			<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
-				<a href="<?= base_url('menu/data_pegawai'); ?>" class="dropdown-item"><i class="fas fa-user fa-sm fa-fw mr-2"></i>MENU</a>
+				<a href="<?= base_url('pegawai/data_pegawai'); ?>" class="dropdown-item"><i class="fas fa-user fa-sm fa-fw mr-2"></i>MENU</a>
 				<div class="dropdown-divider"></div>
-				<a href="<?= base_url('logout'); ?>" class="dropdown-item" type="submit" onclick="return confirm('Yakin logout? Apa tidak ada yang tertinggal?')"><i class="fas fa-fw fa-sign-out-alt mr-2"></i>LOGOUT</a>
+				<a href="<?= base_url('auth/logout'); ?>" class="dropdown-item" type="submit" onclick="return confirm('Yakin logout? Apa tidak ada yang tertinggal?')"><i class="fas fa-fw fa-sign-out-alt mr-2"></i>LOGOUT</a>
 			</div>
 		</li>
 		<!-- ### akhir login/logout ### -->

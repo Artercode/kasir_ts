@@ -1,20 +1,19 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Kemasan_model extends MY_Model
+class Stok_kemasan_model extends MY_Model
 {
    public $table = 'stok_kemasan';
 
-   // #################### kemasan ###########################################################
-   public function getValuesKemasan()
+   public function getValuesStokKemasan()
    {
       return [
-         'id'              => '',
-         'kategori'        => '',
-         'item'            => '',
-         'kemasan_grosir'  => '',
-         'kemasan_eceran'  => '',
-         'kemasan_satuan'  => ''
+         'id_kemasan_grosir'  => '',
+         'kemasan_grosir'     => '',
+         'id_kemasan_eceran'  => '',
+         'kemasan_eceran'     => '',
+         'id_kemasan_satuan'  => '',
+         'kemasan_satuan'     => ''
       ];
    }
 

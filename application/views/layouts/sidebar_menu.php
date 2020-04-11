@@ -2,8 +2,9 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
 	<!-- Brand Logo -->
 	<a href="" class="brand-link">
-		<img src="<?= base_url() ?>images/pegawai/<?= $pegawai['foto']; ?>" class="ml-2 brand-image img-circle elevation-3" alt="">
-		<span class="brand-text font-weight-light"><?= $pegawai['nama']; ?></span>
+		<img src="<?= base_url() ?>images/pegawai/<?= $this->session->userdata('foto') ?>" class="ml-2 brand-image img-circle border">
+		<span class="brand-text font-weight-light"><?= $this->session->userdata('nama') ?></span>
+
 	</a>
 
 	<!-- isi sidebar menu -->
@@ -12,7 +13,7 @@
 			<li class="nav-header mt-n2 mb-n1 text-center">MENU</li>
 
 
-			<!-- #################### penjualan ################################################ -->
+			<!-- #################### penjualan ############################################### -->
 			<li class="nav-item has-treeview">
 				<a href="" class="nav-link active">
 					<i class="nav-icon fas fa-edit"></i>
@@ -23,9 +24,15 @@
 				</a>
 				<ul class="nav nav-treeview">
 					<li class="nav-item">
-						<a href="<?= base_url(); ?>kasir" class="nav-link">
+						<a href="<?= base_url(); ?>jual_kasir" class="nav-link">
 							<i class="far fa-circle nav-icon"></i>
 							<p>Kasir</p>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="<?= base_url(); ?>jual_harga_jual" class="nav-link active">
+							<i class="nav-icon far fa-circle"></i>
+							<p>Harga Jual</p>
 						</a>
 					</li>
 					<li class="nav-item">
@@ -37,7 +44,7 @@
 				</ul>
 			</li>
 
-			<!-- #################### pembelian ################################################ -->
+			<!-- #################### pembelian ############################################### -->
 			<li class="nav-item has-treeview">
 				<a href="" class="nav-link active">
 					<i class="nav-icon fas fa-edit"></i>
@@ -62,7 +69,7 @@
 				</ul>
 			</li>
 
-			<!-- #################### stok ##################################################### -->
+			<!-- #################### stok #################################################### -->
 			<li class="nav-item has-treeview">
 				<a href="" class="nav-link active">
 					<i class="nav-icon fas fa-edit"></i>
@@ -85,21 +92,15 @@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a href="<?= base_url(); ?>kemasan" class="nav-link">
+						<a href="<?= base_url(); ?>stok_kemasan" class="nav-link">
 							<i class="far fa-circle nav-icon"></i>
 							<p>Kemasan</p>
-						</a>
-					</li>
-					<li class="nav-item">
-						<a href="<?= base_url(); ?>stok/stok_data" class="nav-link">
-							<i class="far fa-circle nav-icon"></i>
-							<p>Harga Jual</p>
 						</a>
 					</li>
 				</ul>
 			</li>
 
-			<!-- #################### pegawai ################################################## -->
+			<!-- #################### pegawai ################################################# -->
 			<li class="nav-item has-treeview menu-close">
 				<a href="" class="nav-link active">
 					<i class="nav-icon fas fa-user"></i>
@@ -110,7 +111,7 @@
 				</a>
 				<ul class="nav nav-treeview">
 					<li class="nav-item">
-						<a href="<?= base_url(); ?>menu/data_pegawai" class="nav-link active">
+						<a href="<?= base_url(); ?>pegawai/data_pegawai" class="nav-link active">
 							<i class="nav-icon far fa-id-badge "></i>
 							<p>Data Pegawai</p>
 						</a>
@@ -118,7 +119,7 @@
 				</ul>
 			</li>
 
-			<!-- #################### Pembukuan ################################################ -->
+			<!-- #################### Pembukuan ############################################### -->
 			<li class="nav-item has-treeview menu-close">
 				<a href="" class="nav-link active">
 					<i class="nav-icon fas fa-user"></i>
@@ -137,7 +138,7 @@
 				</ul>
 			</li>
 
-			<!-- #################### setting ################################################## -->
+			<!-- #################### setting ################################################# -->
 			<li class="nav-item has-treeview menu-close">
 				<a href="" class="nav-link active">
 					<i class="nav-icon fas fa-user"></i>
@@ -147,6 +148,13 @@
 					</p>
 				</a>
 				<ul class="nav nav-treeview">
+					<li class="nav-item">
+						<a href="<?= base_url(); ?>sett_jenis_cetak" class="nav-link active">
+							<i class="nav-icon far fa-circle"></i>
+							<p>Jenis Cetak</p>
+						</a>
+					</li>
+
 					<li class="nav-item">
 						<a href="<?= base_url(); ?>menu/data_pegawai" class="nav-link active">
 							<i class="nav-icon far fa-id-badge "></i>

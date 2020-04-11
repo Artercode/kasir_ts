@@ -52,3 +52,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 $route['default_controller'] = 'auth';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+// :num = halaman pagination - untuk menghilangkan index
+$route['stok_kemasan/(:num)'] = 'stok_kemasan/index/$1';
+$route['jual_harga_jual/(:num)'] = 'jual_harga_jual/index/$1';

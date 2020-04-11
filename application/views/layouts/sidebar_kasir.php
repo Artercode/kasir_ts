@@ -2,8 +2,8 @@
 <aside class="main-sidebar sidebar-dark-primary elevation-4">
 	<!-- Brand Logo -->
 	<a href="" class="brand-link">
-		<img src="<?= base_url() ?>images/pegawai/<?= $pegawai['foto']; ?>" class="ml-2 brand-image img-circle elevation-3" alt="">
-		<span class="brand-text font-weight-light"><?= $pegawai['nama']; ?></span>
+		<img src="<?= base_url() ?>images/pegawai/<?= $this->session->userdata('foto') ?>" class="ml-2 brand-image img-circle elevation-3" alt="">
+		<span class="brand-text font-weight-light"><?= $this->session->userdata('nama') ?></span>
 	</a>
 
 	<!-- Sidebar menu -->

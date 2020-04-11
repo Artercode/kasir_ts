@@ -96,6 +96,37 @@
 	<!-- <script src="<?= base_url(); ?>assets/dist/js/demo.js"></script> -->
 	<!-- slug -->
 	<script src="<?= base_url() ?>assets/js/app.js"></script>
+
+	<!-- ajak input value brower - bagian ubah foto akun.php -->
+	<script>
+		$('.custom-file-input').on('change', function() {
+			let fileName = $(this).val().split('\\').pop();
+			$(this).next('.custom-file-label').addClass("selected").html(fileName);
+		})
+	</script>
+
+	<!-- jquery checkbox - menu_akses.php -->
+	<script>
+		// cari form-ckeck-input - saat click jalankan fungsi ..
+		$('.form-check-input').on('click', function() {
+			// ambil data dari menu_akses.php - menu_id dan level_id di bagian form-check-input
+			const levelId = $(this).data('level');
+			const menuId = $(this).data('menu');
+			// jalankan ajax
+			$.ajax({
+				url: "<?= base_url('setting/ubah_akses'); ?>", // ubah_akses ada di setting.php
+				type: 'post',
+				data: { // data object
+					levelId: levelId,
+					menuId: menuId
+				},
+				// ketika berhasil diarahkan ke halaman menu_akses.php
+				success: function() {
+					document.location.href = "<?= base_url('setting/menu_akses/'); ?>" + levelId;
+				}
+			});
+		});
+	</script>
 </body>
 
 </html>

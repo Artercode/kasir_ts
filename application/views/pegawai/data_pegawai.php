@@ -43,9 +43,9 @@
                <div class="card-footer">
                   <div class="mb-2 input-group-append">
                      <div class="custom-file">
-                        <input type="file" name="foto" id="foto" class="custom-file-input">
+                        <input type="file" name="foto" class="custom-file-input">
                         <!-- untuk menampilkan nama file yang kita pilih - jquery di footer -->
-                        <label class="custom-file-label" for="image" placeholder="">Pilih Foto</label>
+                        <label class="custom-file-label" for="foto" placeholder="">Pilih Foto</label>
                      </div>
                   </div>
                   <div class="input-group-append">
@@ -74,7 +74,7 @@
                   <div class="table-responsive">
                      <table class="table m-0">
                         <tbody>
-                           <form action="<?= base_url('akun/editDataAkun'); ?>" method="post">
+                           <form action="<?= base_url('pegawai/editDataPegawai'); ?>" method="post">
                               <!-- nama -->
                               <tr>
                                  <td>
@@ -88,7 +88,7 @@
                                  </td>
                                  <td>
                                     <div class="input-group">
-                                       <input type="text" name="name" id="name" value="<?= $pegawai['nama']; ?>" class="form-control">
+                                       <input type="text" name="nama" value="<?= $pegawai['nama']; ?>" class="form-control">
                                        <div class="input-group-append">
                                           <button type="submit" class="btn btn-primary">Edit</button>
                                        </div>
@@ -110,7 +110,7 @@
                                  <td>
                                     <form action="" method="POST">
                                        <div class="input-group">
-                                          <input type="text" name="address" value="<?= $pegawai['alamat']; ?>" class="form-control">
+                                          <input type="text" name="alamat" value="<?= $pegawai['alamat']; ?>" class="form-control">
                                           <div class="input-group-append">
                                              <button type="submit" class="btn btn-primary" onclick="return confirm('Click, OK untuk edit.')">Edit</button>
                                           </div>
@@ -156,7 +156,7 @@
                                  <td>
                                     <form action="" method="POST">
                                        <div class="input-group">
-                                          <input type="numeric" name="handphone" value="<?= $pegawai['phone']; ?>" class="form-control" placeholder="">
+                                          <input type="numeric" name="phone" value="<?= $pegawai['phone']; ?>" class="form-control" placeholder="">
                                           <div class="input-group-append">
                                              <button type="submit" class="btn btn-primary" onclick="return confirm('Click, OK untuk edit.')">Edit</button>
                                           </div>

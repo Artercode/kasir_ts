@@ -1,4 +1,4 @@
-<!-- sidebar  -->
+<!-- Sidebar  -->
 <?php $this->load->view('layouts/sidebar_menu'); ?>
 <!-- akhir sidebar -->
 
@@ -8,17 +8,20 @@
       <div class="container-fluid">
          <div class="row">
             <div class="col-sm-6">
-               <h3 class="font-weight-bold text-gray"><i class="mx-1 far fa-fw fa-id-badge"></i>Kemasna</h3>
+               <h3 class="font-weight-bold text-gray"><i class="far fa-circle"></i></i> Macam Kemasan</h3>
             </div>
             <!-- info -->
             <div class="h2 col-sm-6">
                <a class="float-sm-right" href="" id="dropdown" data-toggle="dropdown">
-                  <i class="mx-1 fas fa-fw fa-exclamation-circle"></i>
+                  <i class="fas fa-fw fa-exclamation-circle"></i>
                </a>
                <!-- Dropdown info -->
                <div class="p-4 dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="dropdown">
-                  <div class="h6">
-                     Kemasan
+                  <div class="h5">
+                     Jenis Kemasan : <br>
+                     -- Untuk menentikan kemasan tiap harga grosir, harga eceran dan harga satuan. <br>
+                     -- Id Kemasan merupakan singkatan yang akan dicetak di nota. Maksimun 3 huruf. <br>
+                     -- Jenis kemasan dapat diubah, tambah, dan hapus sesuai kebutuhan.
                   </div>
                </div>
             </div>
@@ -28,135 +31,184 @@
    </section>
    <!-- ### akhir judul ### -->
 
-   <!-- ########## kemasan ########## -->
-   <div class="mt-n2 col-lg-11 container-fluid">
-      <?php $this->view('layouts/alert') ?>
-      <!-- tambah kemasan -->
-      <div class="card bg-info">
-         <div class="card-header">
-            <h3 class="card-title">Tambah kemasan</h3>
-            <div class="card-tools">
-               <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
-               </button>
-            </div>
-         </div>
-
-         <div class="mb-n3 card-body">
-            <?= form_open($form_action, ['method' => 'POST']) ?>
-            <?= isset($input->id) ? form_hidden('id', $input->id) : '' ?>
-            <div class="row">
-               <div class="col-md-2">
-                  <div class=" form-group">
-                     <?= form_input('kategori', $input->kategori, ['class' => 'form-control', 'name' => 'kategori', 'placeholder' => 'Kategori', 'autofocus' => true]) ?>
-                     <?= form_error('kategori') ?>
-                  </div>
-               </div>
-               <div class="col-md-3">
-                  <div class=" form-group">
-                     <?= form_input('Item', $input->item, ['class' => 'form-control', 'name' => 'item', 'placeholder' => 'item', 'autofocus' => true]) ?>
-                     <?= form_error('Item') ?>
-                  </div>
-               </div>
-               <div class="col-md-2">
-                  <div class="form-group">
-                     <?= form_input('kemasan_grosir', $input->kemasan_grosir, ['class' => 'form-control', 'name' => 'kemasan_grosir', 'placeholder' => 'Kemasan Grosir']) ?>
-                     <?= form_error('kemasan_grosir') ?>
-                  </div>
-               </div>
-               <div class="col-md-2">
-                  <div class="form-group">
-                     <?= form_input('kemasan_eceran', $input->kemasan_eceran, ['class' => 'form-control', 'name' => 'kemasan_eceran', 'placeholder' => 'Kemasan Eceran']) ?>
-                     <?= form_error('kemasan_eceran') ?>
-                  </div>
-               </div>
-               <div class="col-md-2">
-                  <div class="form-group">
-                     <?= form_input('kemasan_satuan', $input->kemasan_satuan, ['class' => 'form-control', 'name' => 'kemasan_satuan', 'placeholder' => 'Kemasan Satuan']) ?>
-                     <?= form_error('kemasan_satuan') ?>
-                  </div>
-               </div>
-
-               <div class="col-md-1 text-right">
-                  <a type="submit" class="h2">
-                     <i class="far fa-plus-square"></i>
-                  </a>
-                  <?= form_close() ?>
-               </div>
-            </div>
-         </div>
-      </div>
-
-      <!-- tabel kemasan -->
-      <div class="row">
-         <div class="col-md-10 mx-auto">
-            <div class="card mt-3">
-               <div class="card-header">
-                  <span>Kategori - <?= $this->kemasan->count(); ?></span>
-                  <div class="float-right">
-                     <!-- search -->
-                     <?= form_open(base_url('kemasan/search'), ['method' => 'POST']) ?>
-                     <div class="input-group">
-                        <input type="text" name="keyword" class="form-control form-control-sm text-center" placeholder="Cari" value="<?= $this->session->userdata('keyword') ?>">
-                        <div class="input-group-append">
-                           <button type="submit" class="btn btn-secondary btn-sm">
-                              <i class="fas fa-search"></i>
-                           </button>
-                           <a href="<?= base_url('kemasan/reset') ?>" class="btn btn-secondary btn-sm">
-                              <i class="fas fa-eraser"></i>
-                           </a>
+   <section class="pt-3 content">
+      <div class="container-fluid">
+         <?php $this->load->view('layouts/alert') ?>
+         <!-- set kategori -->
+         <div class="mt-n4 row">
+            <!-- kemasan grosir -->
+            <div class="col-md-4">
+               <div class="card">
+                  <div class="card-header border-transparent bg-info">
+                     <?= form_open('', ['method' => 'POST']) ?>
+                     <?= isset($input->id) ? form_hidden('id', $input->id) : '' ?>
+                     <div class="mb-n3 row">
+                        <div class="col-md-5">
+                           <div class="form-group">
+                              <?= form_input('id_kemasan_grosir', $input->id_kemasan_grosir, ['class' => 'form-control', 'name' => 'id_kemasan_grosir', 'placeholder' => 'ID K Grosir']) ?>
+                              <?= form_error('id_kemasan_grosir') ?>
+                           </div>
+                        </div>
+                        <div class="col-md-5">
+                           <div class="form-group">
+                              <?= form_input('kemasan_grosir', $input->kemasan_grosir, ['class' => 'form-control', 'name' => 'kemasan_grosir', 'placeholder' => 'K Grosir']) ?>
+                              <?= form_error('kemasan_grosir') ?>
+                           </div>
+                        </div>
+                        <div class="col-md-2">
+                           <div class="form-group">
+                              <a type="submit" class="h2 float-right">
+                                 <i class="far fa-plus-square"></i>
+                              </a>
+                           </div>
                         </div>
                      </div>
                      <?= form_close() ?>
                   </div>
-               </div>
-               <div class="card-body">
-                  <table class="table table-hover">
-                     <thead>
-                        <tr>
-                           <th scope="col">#</th>
-                           <th scope="col">Kategori</th>
-                           <th scope="col">Kemasan Grosir</th>
-                           <th scope="col">Kemasan Eceran</th>
-                           <th scope="col">Kemasan Satuan</th>
-                           <th width="100px" scope="col"></th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <!-- $no untuk membuat no urut dalam tabel -->
-                        <!-- untuk $perPage harus diisi secara manual -->
-                        <?php $no = $this->kemasan->count();
-                        foreach ($content as $row) : ?>
+                  <div class="card-body p-0">
+                     <table class="table table-striped">
+                        <thead>
                            <tr>
-                              <td><?= $no ?></td>
-                              <td><?= $row->kategori ?></td>
-                              <td><?= $row->kemasan_grosir ?></td>
-                              <td><?= $row->kemasan_eceran ?></td>
-                              <td><?= $row->kemasan_satuan ?></td>
-                              <td>
-                                 <?= form_open("kemasan/delete/$row->id", ['method' => 'POST']) ?>
-                                 <?= form_hidden('id', $row->id) ?>
-                                 <a href="<?= base_url("kemasan/edit/$row->id") ?>" class="btn btn-sm">
-                                    <i class="fas fa-edit text-info"></i>
-                                 </a>
-                                 <button type="submit" class="btn btn-sm" onclick="return confirm('Apakah yakin ingin menghapus?')">
-                                    <i class="fas fa-trash text-danger"></i>
-                                 </button>
-                                 <?= form_close() ?>
-                              </td>
+                              <th>ID K Grosir</th>
+                              <th>K Grosir</th>
                            </tr>
-                           <?php $no--; ?>
-                        <?php endforeach ?>
-                     </tbody>
-                  </table>
-
-                  <nav class="mt-3 mb-n3" aria-label="Page navigation example">
-                     <!-- $pagination method di [40]stok.php dan [136]MY_Modal.php -->
-                     <?= $pagination ?>
-                  </nav>
+                        </thead>
+                        <tbody>
+                           <?php foreach ($grosir as $grs) : ?>
+                              <tr>
+                                 <td><?= $grs->id_kemasan_grosir ?></td>
+                                 <td><?= $grs->kemasan_grosir ?></td>
+                                 <td class="text-right">
+                                    <a type="submit" class="h5 mb-n2">
+                                       <i class="text-info far fa-edit"></i>
+                                    </a>
+                                    <a type="submit" class="h5 mb-n2 ml-3">
+                                       <i class="text-red far fa-trash-alt"></i>
+                                    </a>
+                                 </td>
+                              </tr>
+                           <?php endforeach ?>
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+            </div>
+            <!-- kemasan eceran -->
+            <div class="col-md-4">
+               <div class="card">
+                  <div class="card-header border-transparent bg-info">
+                     <?= form_open('', ['method' => 'POST']) ?>
+                     <?= isset($input->id) ? form_hidden('id', $input->id) : '' ?>
+                     <div class="mb-n3 row">
+                        <div class="col-md-5">
+                           <div class="form-group">
+                              <?= form_input('id_kemasan_eceran', $input->id_kemasan_eceran, ['class' => 'form-control', 'name' => 'id_kemasan_eceran', 'placeholder' => 'ID K Eceran']) ?>
+                              <?= form_error('id_kemasan_eceran') ?>
+                           </div>
+                        </div>
+                        <div class="col-md-5">
+                           <div class="form-group">
+                              <?= form_input('kemasan_eceran', $input->kemasan_eceran, ['class' => 'form-control', 'name' => 'kemasan_eceran', 'placeholder' => 'K Eceran']) ?>
+                              <?= form_error('kemasan_eceran') ?>
+                           </div>
+                        </div>
+                        <div class="col-md-2">
+                           <div class="form-group">
+                              <a type="submit" class="h2 float-right">
+                                 <i class="far fa-plus-square"></i>
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                     <?= form_close() ?>
+                  </div>
+                  <div class="card-body p-0">
+                     <table class="table table-striped">
+                        <thead>
+                           <tr>
+                              <th>ID K Eceran</th>
+                              <th>K Eceran</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <?php foreach ($eceran as $ece) : ?>
+                              <tr>
+                                 <td><?= $ece->id_kemasan_eceran ?></td>
+                                 <td><?= $ece->kemasan_eceran ?></td>
+                                 <td class="text-right">
+                                    <a type="submit" class="h5 mb-n2">
+                                       <i class="text-info far fa-edit"></i>
+                                    </a>
+                                    <a type="submit" class="h5 mb-n2 ml-3">
+                                       <i class="text-red far fa-trash-alt"></i>
+                                    </a>
+                                 </td>
+                              </tr>
+                           <?php endforeach ?>
+                        </tbody>
+                     </table>
+                  </div>
+               </div>
+            </div>
+            <!-- kemasan satuan -->
+            <div class="col-md-4">
+               <div class="card">
+                  <div class="card-header border-transparent bg-info">
+                     <?= form_open('', ['method' => 'POST']) ?>
+                     <?= isset($input->id) ? form_hidden('id', $input->id) : '' ?>
+                     <div class="mb-n3 row">
+                        <div class="col-md-5">
+                           <div class="form-group">
+                              <?= form_input('id_kemasan_satuan', $input->id_kemasan_satuan, ['class' => 'form-control', 'name' => 'id_kemasan_satuan', 'placeholder' => 'ID K Satuan']) ?>
+                              <?= form_error('id_kemasan_satuan') ?>
+                           </div>
+                        </div>
+                        <div class="col-md-5">
+                           <div class="form-group">
+                              <?= form_input('kemasan_satuan', $input->kemasan_satuan, ['class' => 'form-control', 'name' => 'kemasan_satuan', 'placeholder' => 'K Satuan']) ?>
+                              <?= form_error('kemasan_satuan') ?>
+                           </div>
+                        </div>
+                        <div class="col-md-2">
+                           <div class="form-group">
+                              <a type="submit" class="h2 float-right">
+                                 <i class="far fa-plus-square"></i>
+                              </a>
+                           </div>
+                        </div>
+                     </div>
+                     <?= form_close() ?>
+                  </div>
+                  <div class="card-body p-0">
+                     <table class="table table-striped">
+                        <thead>
+                           <tr>
+                              <th>ID K Satuan</th>
+                              <th>K Satuan</th>
+                           </tr>
+                        </thead>
+                        <tbody>
+                           <?php foreach ($satuan as $sat) : ?>
+                              <tr>
+                                 <td><?= $sat->id_kemasan_satuan ?></td>
+                                 <td><?= $sat->kemasan_satuan ?></td>
+                                 <td class="text-right">
+                                    <a type="submit" class="h5 mb-n2">
+                                       <i class="text-info far fa-edit"></i>
+                                    </a>
+                                    <a type="submit" class="h5 mb-n2 ml-3">
+                                       <i class="text-red far fa-trash-alt"></i>
+                                    </a>
+                                 </td>
+                              </tr>
+                           <?php endforeach ?>
+                        </tbody>
+                     </table>
+                  </div>
                </div>
             </div>
          </div>
+         <!-- akhir set kategori -->
       </div>
-   </div>
-   <!-- ### akhir kemasan ### -->
+   </section>
 </div>
