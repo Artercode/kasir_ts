@@ -54,4 +54,7 @@ $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 // :num = halaman pagination - untuk menghilangkan index
 $route['stok_kemasan/(:num)'] = 'stok_kemasan/index/$1';
+$route['stok_kategori/(:num)'] = 'stok_kategori/index/$1';
 $route['jual_harga_jual/(:num)'] = 'jual_harga_jual/index/$1';
+$route['jual_pelanggan/(:num)'] = 'jual_pelanggan/index/$1';
+$route['role_akses/(:num)'] = 'role_akses/index/$1';

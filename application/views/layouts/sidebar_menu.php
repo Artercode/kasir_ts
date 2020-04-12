@@ -36,7 +36,7 @@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a href="<?= base_url(); ?>stok/stok_kategori" class="nav-link">
+						<a href="<?= base_url(); ?>jual_pelanggan" class="nav-link">
 							<i class="far fa-circle nav-icon"></i>
 							<p>Pelanggan</p>
 						</a>
@@ -55,13 +55,13 @@
 				</a>
 				<ul class="nav nav-treeview">
 					<li class="nav-item">
-						<a href="<?= base_url(); ?>pembelian/nota_pembelian" class="nav-link">
+						<a href="<?= base_url(); ?>beli_pembelian" class="nav-link">
 							<i class="far fa-circle nav-icon"></i>
-							<p>Nota Pembelian</p>
+							<p>Pembelian</p>
 						</a>
 					</li>
 					<li class="nav-item">
-						<a href="<?= base_url(); ?>stok/stok_kategori" class="nav-link">
+						<a href="<?= base_url(); ?>beli_pemasok" class="nav-link">
 							<i class="far fa-circle nav-icon"></i>
 							<p>Pemasok</p>
 						</a>
@@ -86,7 +86,7 @@
 						</a>
 					</li>
 					<li class="nav-item">
-						<a href="<?= base_url(); ?>stok/kategori" class="nav-link">
+						<a href="<?= base_url(); ?>stok_kategori" class="nav-link">
 							<i class="far fa-circle nav-icon"></i>
 							<p>Kategori</p>
 						</a>
@@ -154,11 +154,16 @@
 							<p>Jenis Cetak</p>
 						</a>
 					</li>
-
 					<li class="nav-item">
-						<a href="<?= base_url(); ?>menu/data_pegawai" class="nav-link active">
+						<a href="<?= base_url(); ?>role" class="nav-link active">
 							<i class="nav-icon far fa-id-badge "></i>
-							<p>Level & Akses Menu</p>
+							<p>Role Menu</p>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="<?= base_url(); ?>role_akses" class="nav-link active">
+							<i class="nav-icon far fa-id-badge "></i>
+							<p>Role Akses</p>
 						</a>
 					</li>
 				</ul>

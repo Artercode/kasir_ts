@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Stok extends MY_Controller
+class Stok_kategori extends MY_Controller
 {
    public function __construct()
    {
@@ -9,37 +9,22 @@ class Stok extends MY_Controller
       $this->load->library('form_validation');
    }
 
-   public function stok_item()
-   {
-      $pegawai = $this->db->get('pegawai', ['username' => $this->input->post('username')])->row_array();
-      $data['title']    = 'Stok Item';
-      $data['pegawai']  = $pegawai;
-
-      $data['page']     = 'stok/stok_item';
-      $this->view($data);
-   }
-
-   // #################### kategori ###########################################################
-   public function kategori($page = null)
+   public function index($page = null)
    {
       if (!$_POST) {
-         $input = (object) $this->stok->getValuesKategori(); // stok_model
+         $input = (object) $this->stok_kategori->getValuesStokKategori(); // stok_model
       } else {
          $input = (object) $this->input->post(null, true);
       }
 
-      $pegawai = $this->db->get('pegawai', ['username' => $this->input->post('username')])->row_array();
-
       $data['title']       = 'Kategori';
-      $data['pegawai']     = $pegawai;
       $data['input']       = $input;
-      $data['form_action'] = base_url('stok/tambah_kategori');
-      $data['content']    = $this->stok->paginate($page)->get();
-      $data['total_rows'] = $this->stok->count(); // total data dalam tabel sto_kategori
-      // 3 parameter untuk membuat pagination 
-      $data['pagination'] = $this->stok->makePagination(
-         base_url('stok/kategori'),
-         3, // mengarahkan ke halaman pagination yang ada di url)
+      $data['form_action'] = base_url('stok_kategori/tambah_kategori');
+      $data['content']    = $this->stok_kategori->paginate($page)->get();
+      $data['total_rows'] = $this->stok_kategori->count(); // total baris data dalam tabel
+      $data['pagination'] = $this->stok_kategori->makePagination(
+         base_url('stok_kategori'),
+         2, // mengarahkan ke halaman pagination yang ada di url)
          $data['total_rows']
       );
       $data['page']        = 'stok/kategori';
@@ -50,14 +35,14 @@ class Stok extends MY_Controller
    {
       // untuk mengembalikan inputan terakir == set_value
       if (!$_POST) {
-         $input = (object) $this->stok->getValuesKategori();  // stok_model
+         $input = (object) $this->stok_kategori->getValuesStokKategori();  // stok_model
       } else {
          $input = (object) $this->input->post(null, true);
       }
 
       if (!$this->stok->validate()) {
          $data['input']          = $input;
-         $data['form_action']    = base_url('stok/tambah_kategori');
+         $data['form_action']    = base_url('stok_kategori/tambah_kategori');
          $data['page']           = 'stok/kategori';
 
          $this->view($data);
@@ -76,8 +61,8 @@ class Stok extends MY_Controller
    {
       $slug       = $this->input->post('slug');
       $id         = $this->input->post('id');
-      // stok_model - public $table = 'stok_kategori'; (harus ada untuk menentukan tabel yg digunakan)
-      $kategori   = $this->stok->where('slug', $slug)->first();
+      // public $table = 'stok_kategori'; (set table) - stok_kategori_model.php
+      $kategori   = $this->stok_kategori->where('slug', $slug)->first();
 
       if ($kategori) {
          if ($id = $kategori->id) {

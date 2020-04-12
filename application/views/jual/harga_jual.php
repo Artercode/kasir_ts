@@ -50,10 +50,10 @@
    <!-- ### akhir judul ### -->
 
    <div class="container-fluid">
-      <?php $this->load->view('layouts/alert') ?>
-      <!-- jenis nota -->
+      <?php $this->view('layouts/alert') ?>
+      <!-- #################### harga jual ################################################ -->
       <div class="mt-n3 col-md">
-         <!-- jenis nota -->
+         <!-- ########## form tambah harga jual ########## -->
          <div class="card-header border-transparent bg-info">
             <?= form_open('', ['method' => 'POST']) ?>
             <?= isset($input->id) ? form_hidden('id', $input->id) : '' ?>
@@ -117,6 +117,7 @@
                      <?= form_error('harga_satuan') ?>
                   </div>
                </div>
+               <!-- tambah -->
                <div class="col-md-1">
                   <div class="form-group">
                      <a type="submit" class="h2 float-right">
@@ -128,11 +129,12 @@
             <?= form_close() ?>
          </div>
 
+         <!-- ########## tabel harga jual ########## -->
          <div class="card-body p-0">
-            <table class="table table-striped">
+            <table class="table table-hover">
                <thead>
-                  <tr>
-                     <th>Image</th>
+                  <tr class="border">
+                     <th width="50px">Image</th>
                      <th>Barcode</th>
                      <th>Item</th>
                      <th>Isi G</th>
@@ -147,7 +149,7 @@
                <tbody>
                   <?php foreach ($content as $ct) : ?>
                      <tr>
-                        <td width="50px"><?= $ct->image ?></td>
+                        <td><?= $ct->image ?></td>
                         <td><?= $ct->barcode ?></td>
                         <td><?= $ct->item ?></td>
                         <td><?= $ct->isi_grosir ?></td>
@@ -157,10 +159,10 @@
                         <td><?= $ct->isi_satuan ?></td>
                         <td><?= $ct->harga_satuan ?></td>
                         <td class="text-right">
-                           <a type="submit" class="h5 mb-n2">
+                           <a href="" type="submit" class="h5 mb-n2">
                               <i class="text-info far fa-edit"></i>
                            </a>
-                           <a type="submit" class="h5 mb-n2 ml-3">
+                           <a type="submit" class="h5 mb-n2 ml-3" onclick="return confirm('Apakah yakin ingin menghapus?')">
                               <i class="text-red far fa-trash-alt"></i>
                            </a>
                         </td>
@@ -170,11 +172,11 @@
             </table>
 
             <nav class="mt-3 mb-n3" aria-label="Page navigation example">
-               <!-- $pagination method di [40]stok.php dan [136]MY_Modal.php -->
+               <!-- $pagination method di controller, routes, dan [136]MY_Modal.php -->
                <?= $pagination ?>
             </nav>
          </div>
       </div>
+      <!-- akhir harga jual -->
    </div>
-   <!-- akhir jenis nota -->
 </div>

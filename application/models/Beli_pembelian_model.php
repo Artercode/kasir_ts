@@ -1,19 +1,19 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Pembelian_model extends MY_Model
+class Beli_pembelian_model extends MY_Model
 {
-   public $table = 'stok_kategori';
+   public $table = 'beli_pembelian';
 
-   public function getDefaultValues()
+   public function getValuesBeliPembelian()
    {
       return [
          'id'              => '',
          'jml'             => '',
          'item'            => '',
-         'beli_grosir'    => '',
-         'isi'             => '',
-         'beli_eceran'    => ''
+         'isi_grosir'      => '',
+         'harga_grosir'    => '',
+         'harga_eceran'    => ''
       ];
    }
    // menentukan syarat validasi rulenya

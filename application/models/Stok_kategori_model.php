@@ -1,11 +1,11 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Stok_model extends MY_Model
+class Stok_kategori_model extends MY_Model
 {
    public $table = 'stok_kategori';
 
-   public function getValuesKategori()
+   public function getValuesStokKategori()
    {
       return [
          'id'        => '',

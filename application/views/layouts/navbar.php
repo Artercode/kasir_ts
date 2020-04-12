@@ -5,24 +5,10 @@
 		<li class="nav-item">
 			<a class="nav-link" data-widget="pushmenu" href=""><i class="fas fa-bars"></i></a>
 		</li>
-
-		<!-- ########## menu kasir ########## -->
-		<li class="nav-item dropdown no-arrow">
-			<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				KASIR
-			</a>
-			<!-- Dropdown info -->
-			<div class="dropdown-menu dropdown-menu-left shadow animated--grow-in" aria-labelledby="userDropdown">
-				<a href="<?= base_url('kasir'); ?>" class="dropdown-item"><i class="fas fa-fw fa-cash-register mr-2"></i>KASIR</a>
-				<div class="dropdown-divider"></div>
-				<a href="<?= base_url(''); ?>" class="dropdown-item"><i class="fas fa-fw fa-money-bill-wave mr-2"></i></i>Pembelian</a>
-				<div class="dropdown-divider"></div>
-				<a href="<?= base_url(''); ?>" class="dropdown-item"><i class="fas fa-fw fa-undo-alt mr-2"></i></i>Reture</a>
-				<div class="dropdown-divider"></div>
-				<a href="<?= base_url(''); ?>" class="dropdown-item"><i class="far fa-fw fa-trash-alt mr-2"></i></i>Rusak</a>
-			</div>
+		<li class="nav-item">
+			<a class="h2 my-n2 text-light" href="#"><?= $title ?></a>
 		</li>
-		<!-- ### akhir menu kasir ### -->
+
 	</ul>
 
 	<!-- link navbar kanan -->
@@ -56,10 +42,9 @@
 		</li>
 
 		<!-- ########## login/logout ########## -->
-		<li class="nav-item dropdown no-arrow">
+		<li class="mr-n3 nav-item dropdown no-arrow">
 			<a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-				<?= $this->session->userdata('nama') ?>
-				<i class="ml-3 fas fa-ellipsis-v"></i>
+				<i class="ml-2 fas fa-ellipsis-v"></i>
 			</a>
 			<!-- Dropdown info -->
 			<div class="dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
@@ -68,7 +53,20 @@
 				<a href="<?= base_url('auth/logout'); ?>" class="dropdown-item" type="submit" onclick="return confirm('Yakin logout? Apa tidak ada yang tertinggal?')"><i class="fas fa-fw fa-sign-out-alt mr-2"></i>LOGOUT</a>
 			</div>
 		</li>
-		<!-- ### akhir login/logout ### -->
+
+		<!-- ########## info ########## -->
+		<li class="nav-item">
+			<a class="h3 my-n1 nav-link" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+				<i class="fas fa-exclamation-circle"></i>
+			</a>
+			<!-- Dropdown info -->
+			<div class="mr-4 mt-4 dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="userDropdown">
+				<div class="h5 ml-3">
+					test
+				</div>
+			</div>
+		</li>
+
 
 		<!-- <li class="nav-item">
             <a class="nav-link" data-widget="control-sidebar" data-slide="true" href="#">
