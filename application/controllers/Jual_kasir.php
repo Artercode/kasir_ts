@@ -3,14 +3,25 @@ defined('BASEPATH') or exit('No direct script access allowed');
 
 class Jual_kasir extends MY_Controller
 {
-    public function index()
-    {
+	public function __construct()
+	{
+		parent::__construct();
+		// logged();
+		$this->load->library('form_validation');
+	}
 
-        $data['title']      = 'KASIR';
-        $data['page']       = 'jual/index';
+	public function index()
+	{
+		if (!$_POST) {
+			$input = (object) $this->jual_kasir->getValuesKasir(); // stok_model
+		} else {
+			$input = (object) $this->input->post(null, true);
+		}
 
-        return $this->view($data);
-    }
+		$data['title']      = 'KASIR';
+		$data['input']       = $input;
+		$data['page']       = 'jual/index';
+
+		return $this->view($data);
+	}
 }
-
-/* End of file Controllername.php */

@@ -1,9 +1,9 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Sett_jenis_cetak_model extends MY_Model
+class Sett_kode_cetak_model extends MY_Model
 {
-   public function getValuesJenisCetak()
+   public function getValueskodeCetak()
    {
       return [
          'id_nota'  => '',

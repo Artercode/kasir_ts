@@ -25,7 +25,7 @@
 				<ul class="nav nav-treeview">
 					<li class="nav-item">
 						<a href="<?= base_url(); ?>jual_kasir" class="nav-link">
-							<i class="far fa-circle nav-icon"></i>
+							<i class="nav-icon far fa-circle"></i>
 							<p>Kasir</p>
 						</a>
 					</li>
@@ -61,6 +61,12 @@
 						</a>
 					</li>
 					<li class="nav-item">
+						<a href="<?= base_url(); ?>beli_pembelian" class="nav-link">
+							<i class="far fa-circle nav-icon"></i>
+							<p>Pengeluaran</p>
+						</a>
+					</li>
+					<li class="nav-item">
 						<a href="<?= base_url(); ?>beli_pemasok" class="nav-link">
 							<i class="far fa-circle nav-icon"></i>
 							<p>Pemasok</p>
@@ -82,7 +88,7 @@
 					<li class="nav-item">
 						<a href="<?= base_url(); ?>stok/stok_item" class="nav-link">
 							<i class="far fa-circle nav-icon"></i>
-							<p>Stok Item</p>
+							<p>Stok</p>
 						</a>
 					</li>
 					<li class="nav-item">
@@ -132,7 +138,7 @@
 					<li class="nav-item">
 						<a href="<?= base_url(); ?>menu/data_pegawai" class="nav-link active">
 							<i class="nav-icon far fa-id-badge "></i>
-							<p>Daftar Harga</p>
+							<p>Daftar</p>
 						</a>
 					</li>
 				</ul>
@@ -149,15 +155,15 @@
 				</a>
 				<ul class="nav nav-treeview">
 					<li class="nav-item">
-						<a href="<?= base_url(); ?>sett_jenis_cetak" class="nav-link active">
+						<a href="<?= base_url(); ?>sett_kode_cetak" class="nav-link active">
 							<i class="nav-icon far fa-circle"></i>
-							<p>Jenis Cetak</p>
+							<p>Kode Cetak</p>
 						</a>
 					</li>
 					<li class="nav-item">
 						<a href="<?= base_url(); ?>role" class="nav-link active">
 							<i class="nav-icon far fa-id-badge "></i>
-							<p>Role Menu</p>
+							<p>Role</p>
 						</a>
 					</li>
 					<li class="nav-item">
@@ -166,29 +172,23 @@
 							<p>Role Akses</p>
 						</a>
 					</li>
+					<li class="nav-item">
+						<a href="<?= base_url(); ?>role_menu" class="nav-link active">
+							<i class="nav-icon far fa-id-badge "></i>
+							<p>Menu</p>
+						</a>
+					</li>
+					<li class="nav-item">
+						<a href="<?= base_url(); ?>role_submenu" class="nav-link active">
+							<i class="nav-icon far fa-id-badge "></i>
+							<p>Submenu</p>
+						</a>
+					</li>
 				</ul>
 			</li>
 
 
 
-			<li class="nav-item">
-				<a href="pages/calendar.html" class="nav-link">
-					<i class="nav-icon far fa-calendar-alt"></i>
-					<p>
-						Calendar
-						<span class="badge badge-info right">2</span>
-					</p>
-				</a>
-			</li>
-			<li class="nav-item">
-				<a href="pages/widgets.html" class="nav-link">
-					<i class="nav-icon fas fa-th"></i>
-					<p>
-						Widgets
-						<span class="right badge badge-danger">New</span>
-					</p>
-				</a>
-			</li>
 		</ul>
 	</nav>
 	<!-- akhir isi sidebar menu -->

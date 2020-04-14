@@ -58,3 +58,5 @@ $route['stok_kategori/(:num)'] = 'stok_kategori/index/$1';
 $route['jual_harga_jual/(:num)'] = 'jual_harga_jual/index/$1';
 $route['jual_pelanggan/(:num)'] = 'jual_pelanggan/index/$1';
 $route['role_akses/(:num)'] = 'role_akses/index/$1';
+$route['role_menu/(:num)'] = 'role_menu/index/$1';
+$route['role_submenu/(:num)'] = 'role_submenu/index/$1';

@@ -6,6 +6,7 @@ class Role_akses extends MY_Controller
    public function __construct()
    {
       parent::__construct();
+      // logged();
       $this->load->library('form_validation');
    }
 

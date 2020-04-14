@@ -8,7 +8,7 @@
       <div class="container-fluid">
          <div class="row">
             <div class="col-sm-6">
-               <h3 class="font-weight-bold text-gray"><i class="far fa-circle"></i></i> Role Akses</h3>
+               <h3 class="font-weight-bold text-gray"><i class="far fa-circle"></i></i> Submenu</h3>
             </div>
             <!-- info -->
             <div class="h2 col-sm-6">
@@ -18,7 +18,7 @@
                <!-- Dropdown info -->
                <div class="p-4 dropdown-menu dropdown-menu-right shadow animated--grow-in" aria-labelledby="dropdown">
                   <div class="h5">
-                     Role Akses: <br>
+                     Submenu : <br>
 
                   </div>
                </div>
@@ -32,41 +32,40 @@
    <div class="container-fluid">
       <?php $this->view('layouts/alert') ?>
       <div class="row">
-
-         <!-- #################### akses ################################################## -->
-         <div class="mt-n3 col-md-6">
+         <!-- #################### role ################################################### -->
+         <div class="mt-n3 col-md-12">
             <!-- ########## form tambah role ########## -->
             <div class="card-header border-transparent bg-info">
-               <?= form_open('role/tambah_akses', ['method' => 'POST']) ?>
+               <?= form_open('role/tambah_role', ['method' => 'POST']) ?>
                <?= isset($input->id) ? form_hidden('id', $input->id) : '' ?>
                <div class="mb-n3 row">
-                  <div class="col-md-2">
-                     <div class="form-group">
-                        <?= form_input('role_id', $input->role_id, ['class' => 'form-control', 'name' => 'role_id', 'placeholder' => 'ID Role']) ?>
-                        <?= form_error('role_id') ?>
-                     </div>
-                  </div>
                   <div class="col-md-2">
                      <div class="form-group">
                         <?= form_input('menu_id', $input->menu_id, ['class' => 'form-control', 'name' => 'menu_id', 'placeholder' => 'ID Menu']) ?>
                         <?= form_error('menu_id') ?>
                      </div>
                   </div>
-                  <div class="col-md-2">
+                  <div class="col-md-3">
                      <div class="form-group">
-                        <?= form_input('submenu_id', $input->submenu_id, ['class' => 'form-control', 'name' => 'submenu_id', 'placeholder' => 'ID Submenu']) ?>
-                        <?= form_error('submenu_id') ?>
+                        <?= form_input('submenu', $input->submenu, ['class' => 'form-control', 'name' => 'submenu', 'placeholder' => 'Submenu']) ?>
+                        <?= form_error('submenu') ?>
                      </div>
                   </div>
-                  <div class="col-md-2">
+                  <div class="col-md-3">
                      <div class="form-group">
-                        <?= form_input('aktif', $input->aktif, ['class' => 'form-control', 'name' => 'aktif', 'placeholder' => 'Aktif']) ?>
-                        <?= form_error('aktif') ?>
+                        <?= form_input('url', $input->url, ['class' => 'form-control', 'name' => 'url', 'placeholder' => 'Url']) ?>
+                        <?= form_error('url') ?>
+                     </div>
+                  </div>
+                  <div class="col-md-3">
+                     <div class="form-group">
+                        <?= form_input('icon', $input->icon, ['class' => 'form-control', 'name' => 'icon', 'placeholder' => 'Icon']) ?>
+                        <?= form_error('icon') ?>
                      </div>
                   </div>
 
                   <!-- tambah -->
-                  <div class="col-md-4">
+                  <div class="col-md-1">
                      <div class="form-group">
                         <a type="submit" class="h2 float-right">
                            <i class="far fa-plus-square"></i>
@@ -82,20 +81,20 @@
                <table class="table table-hover">
                   <thead>
                      <tr class="border">
-                        <th>ID Role</th>
                         <th>ID Menu</th>
-                        <th>ID Submenu</th>
-                        <th>Info</th>
+                        <th>Submenu</th>
+                        <th>Url</th>
+                        <th>Icon</th>
                         <th></th>
                      </tr>
                   </thead>
                   <tbody>
                      <?php foreach ($content as $ct) : ?>
                         <tr>
-                           <td><?= $ct->role_id ?></td>
                            <td><?= $ct->menu_id ?></td>
-                           <td><?= $ct->submenu_id ?></td>
-                           <td><?= $ct->info ?></td>
+                           <td><?= $ct->submenu ?></td>
+                           <td><?= $ct->url ?></td>
+                           <td><?= $ct->icon ?></td>
                            <td class="text-right">
                               <a href="" type="submit" class="h5 mb-n2 ml-3">
                                  <i class="text-info far fa-edit"></i>
@@ -115,7 +114,8 @@
                </nav>
             </div>
          </div>
-         <!-- akhir akses -->
+         <!-- akhir role -->
+
       </div>
    </div>
 </div>

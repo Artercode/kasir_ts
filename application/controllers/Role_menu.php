@@ -1,7 +1,7 @@
 <?php
 defined('BASEPATH') or exit('No direct script access allowed');
 
-class Role extends MY_Controller
+class Role_menu extends MY_Controller
 {
    public function __construct()
    {
@@ -13,21 +13,21 @@ class Role extends MY_Controller
    public function index($page = null)
    {
       if (!$_POST) {
-         $input = (object) $this->role->getValuesRole(); // _model.php
+         $input = (object) $this->role_menu->getValuesRoleMenu(); // _model.php
       } else {
          $input = (object) $this->input->post(null, true);
       }
 
-      $data['title']       = 'Role';
+      $data['title']       = 'Menu';
       $data['input']       = $input;
-      $data['content']     = $this->role->paginate($page)->get();
-      $data['total_rows']  = $this->role->count(); // total baris data
-      $data['pagination']  = $this->role->makePagination(
-         base_url('role'), // jika pakai index - setting ada di routes.php
+      $data['content']     = $this->role_menu->paginate($page)->get();
+      $data['total_rows']  = $this->role_menu->count(); // total baris data
+      $data['pagination']  = $this->role_menu->makePagination(
+         base_url('role_menu'), // jika pakai index - setting ada di routes.php
          2, // segment url untuk halaman pagination)
          $data['total_rows']
       );
-      $data['page']        = 'role/role';
+      $data['page']        = 'role/menu';
 
       return $this->view($data);
    }

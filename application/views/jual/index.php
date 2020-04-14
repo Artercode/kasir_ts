@@ -3,90 +3,87 @@
 <!-- akhir sidebar -->
 
 <div class="content-wrapper">
-	<!-- ########## kasir ########## -->
 	<section class="content">
+		<!-- ########## kasir ########## -->
 		<div class="container-fluid">
 			<div class="row">
+
+
 				<!-- ########## nota ########## -->
 				<div class="pt-2 col-md-9">
 					<?php $this->load->view('layouts/alert') ?>
+					<!-- ########## form tambah role ########## -->
+					<div class="card-header border-transparent bg-info">
+						<?= form_open('role/tambah_role', ['method' => 'POST']) ?>
+						<?= isset($input->id) ? form_hidden('id', $input->id) : '' ?>
+						<div class="mb-n3 row">
+							<div class="col-md-2">
+								<div class="form-group">
+									<?= form_input('jml', $input->jml, ['class' => 'form-control', 'name' => 'jml', 'placeholder' => 'Jml']) ?>
+									<?= form_error('jml') ?>
+								</div>
+							</div>
+
+							<div class="col-md-2">
+								<div class="form-group">
+									<label class="mr-sm-2 sr-only" for="kemasan"></label>
+									<select class="custom-select mr-sm-2" id="kemasan">
+										<option selected>Eceran</option>
+										<option value="1">Satuan</option>
+										<!-- <option value="2">Satuan</option> -->
+									</select>
+								</div>
+							</div>
+
+							<div class="col-md-4">
+								<div class="form-group">
+									<?= form_input('item', $input->item, ['class' => 'form-control', 'name' => 'item', 'placeholder' => 'Item']) ?>
+									<?= form_error('item') ?>
+								</div>
+							</div>
+
+							<!-- tambah -->
+							<div class="col-md-4">
+								<div class="form-group">
+									<a type="submit" class="h2 float-right">
+										<i class="far fa-plus-square"></i>
+									</a>
+								</div>
+							</div>
+						</div>
+						<?= form_close() ?>
+					</div>
+
+					<!-- ########## tabel nota penjualan ########## -->
 					<div class="card">
 						<div class="card-body p-0">
 							<table class="table table-striped">
 								<thead>
 									<tr>
-										<th style="width: 30px">Qty</th>
+										<th>Jml|Kms</th>
 										<th>Item</th>
-										<th>Discount</th>
+										<th>Harga</th>
 										<th style="width: 130px">Sub Total</th>
 										<th style="width: 40px"></th>
 									</tr>
 								</thead>
 								<tbody>
 									<tr>
-										<td>1.</td>
-										<td>Update software</td>
+										<td>5|Ecr</td>
+										<td>Aqua 300</td>
+										<td>3.000</td>
+										<td>15.000</td>
 										<td>
-											<div class="progress progress-xs">
-												<div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-											</div>
-										</td>
-										<td><span class="badge bg-danger float-right">55%</span></td>
-										<td>
-											<div class="mt-n2 mb-n1 btn btn-sm btn-danger">
-												<i class="far fa-fw fa-window-close"></i>
-											</div>
+											<a type="submit" class="h5 mb-n2 ml-3" onclick="return confirm('Apakah yakin ingin menghapus?')">
+												<i class="text-red far fa-trash-alt"></i>
+											</a>
 										</td>
 									</tr>
-									<tr>
-										<td>2.</td>
-										<td>Clean database</td>
-										<td>
-											<div class="progress progress-xs">
-												<div class="progress-bar bg-warning" style="width: 70%"></div>
-											</div>
-										</td>
-										<td><span class="badge bg-warning float-right">70%</span></td>
-										<td>
-											<div class="mt-n2 mb-n1 btn btn-sm btn-danger">
-												<i class="far fa-fw fa-window-close"></i>
-											</div>
-										</td>
-									</tr>
-									<tr>
-										<td>3.</td>
-										<td>Cron job running</td>
-										<td>
-											<div class="progress progress-xs progress-striped active">
-												<div class="progress-bar bg-primary" style="width: 30%"></div>
-											</div>
-										</td>
-										<td><span class="badge bg-primary float-right">30%</span></td>
-										<td>
-											<div class="mt-n2 mb-n1 btn btn-sm btn-danger">
-												<i class="far fa-fw fa-window-close"></i>
-											</div>
-										</td>
-									</tr>
-									<tr>
-										<td>4.</td>
-										<td>Fix and squish bugs</td>
-										<td>
-											<div class="progress progress-xs progress-striped active">
-												<div class="progress-bar bg-success" style="width: 90%"></div>
-											</div>
-										</td>
-										<td><span class="badge bg-success float-right">90%</span></td>
-										<td>
-											<div class="mt-n2 mb-n1 btn btn-sm btn-danger">
-												<i class="far fa-fw fa-window-close"></i>
-											</div>
-										</td>
-									</tr>
+
+
 								</tbody>
 							</table>
 						</div>
-						<!-- /.card-body -->
 					</div>
 				</div>
 				<!-- ### akhir nota ### -->

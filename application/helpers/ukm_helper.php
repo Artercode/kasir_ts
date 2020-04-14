@@ -4,7 +4,7 @@
 function logged()
 {
    $ci = get_instance(); // gunakan get_instance untuk memanggil library codeigniter
-   if (!$ci->session->userdata('email')) {
+   if (!$ci->session->userdata('username')) {
       redirect('auth');
    } else {
       // ambil level_id dari session untuk menentukan level_id yang sedang login

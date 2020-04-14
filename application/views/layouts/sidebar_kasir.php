@@ -21,7 +21,7 @@
 			<div class="row">
 				<div class="col-6">
 					<div class="pt-2 mt-n1 card text-center shadow">
-						<h6>Jenis-Item</h6>
+						<h6>Macam-Item</h6>
 						<h3 class="mt-n2">15</h3>
 					</div>
 				</div>

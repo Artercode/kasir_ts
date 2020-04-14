@@ -12,6 +12,7 @@ class Role_akses_model extends MY_Model
          'role_id'      => '',
          'menu_id'      => '',
          'submenu_id'   => '',
+         'Info'         => '',
          'aktif'        => ''
       ];
    }

@@ -6,6 +6,7 @@ class Jual_harga_jual extends MY_Controller
    public function __construct()
    {
       parent::__construct();
+      // logged();
       $this->load->library('form_validation');
    }
 
@@ -17,12 +18,9 @@ class Jual_harga_jual extends MY_Controller
          $input = (object) $this->input->post(null, true);
       }
 
-      $pegawai = $this->db->get_where('pegawai', ['username' => $this->session->userdata('username')])->row_array();
-
       $data['title']       = 'Harga Jual';
-      $data['pegawai']     = $pegawai;
       $data['input']       = $input;
-      $data['content']     = $this->jual_harga_jual->paginate($page)->get();
+      $data['content']     = $this->jual_harga_jual->paginate($page)->orderBy('id', 'desc')->get();
       $data['total_rows']  = $this->jual_harga_jual->count(); // total baris data
       $data['pagination']  = $this->jual_harga_jual->makePagination(
          base_url('jual_harga_jual'), // jika pakai index - setting ada di routes.php

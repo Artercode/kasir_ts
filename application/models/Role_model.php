@@ -12,14 +12,4 @@ class Role_model extends MY_Model
          'role'      => ''
       ];
    }
-
-   public function getValuesAkses()
-   {
-      return [
-         'role_id'      => '',
-         'menu_id'      => '',
-         'submenu_id'   => '',
-         'aktif'        => ''
-      ];
-   }
 }
